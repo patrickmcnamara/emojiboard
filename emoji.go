@@ -1,6 +1,6 @@
 package main
 
-const emojis = `{
+const emoji = `{
 	"grinning face": "U+1F600",
 	"grinning face with big eyes": "U+1F603",
 	"grinning face with smiling eyes": "U+1F604",

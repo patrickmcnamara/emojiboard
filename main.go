@@ -33,7 +33,7 @@ func typeCodepoints(codepoints string) {
 func main() {
 	// get emoji shortnames and their respective codepoints
 	var emojiToCodepoints map[string]string
-	json.Unmarshal([]byte(emojis), &emojiToCodepoints)
+	json.Unmarshal([]byte(emoji), &emojiToCodepoints)
 
 	// choose an emoji using dmenu
 	var shortnames []string
