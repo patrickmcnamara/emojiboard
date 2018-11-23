@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"os"
 	"os/exec"
@@ -28,7 +27,6 @@ func typeCodepoints(codepoints string) {
 	cps := strings.Split(strings.Replace(codepoints, "+", "", -1), " ")
 	for _, cp := range cps {
 		exec.Command("xdotool", "key", cp).Run()
-		fmt.Println(cp)
 	}
 }
 
