@@ -1644,5 +1644,10 @@ const emoji = `{
 	"Zimbabwe": "U+1F1FF U+1F1FC",
 	"England": "U+1F3F4 U+E0067 U+E0062 U+E0065 U+E006E U+E0067 U+E007F",
 	"Scotland": "U+1F3F4 U+E0067 U+E0062 U+E0073 U+E0063 U+E0074 U+E007F",
-	"Wales": "U+1F3F4 U+E0067 U+E0062 U+E0077 U+E006C U+E0073 U+E007F"
+	"Wales": "U+1F3F4 U+E0067 U+E0062 U+E0077 U+E006C U+E0073 U+E007F",
+	"Light Skin Tone": "U+1F3FB",
+	"Medium-Light Skin Tone": "U+1F3FC",
+	"Medium Skin Tone": "U+1F3FD",
+	"Medium-Dark Skin Tone": "U+1F3FE",
+	"Dark Skin Tone": "U+1F3FF"
 }`
