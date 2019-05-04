@@ -2,40 +2,39 @@ package main
 
 import (
 	"io"
-	"os"
 	"os/exec"
 	"strings"
 )
 
-func chooseShortname(list []string) string {
-	dmenuList := strings.Join(list, "\n")
-	c := exec.Command("dmenu", "-i")
-	stdin, _ := c.StdinPipe()
-	io.WriteString(stdin, dmenuList)
-	stdin.Close()
-	b, err := c.Output()
-	if err != nil {
-		os.Exit(0)
+func getShortnames() []string {
+	var shortnames = make([]string, len(emojiToCodepoints))
+	var i int
+	for key := range emojiToCodepoints {
+		shortnames[i] = key
+		i++
 	}
-	c.Run()
-	shortname := strings.TrimSpace(string(b))
-	return shortname
+	return shortnames
 }
 
-func typeCodepoints(codepoints string) {
-	cps := strings.Split(strings.Replace(codepoints, "+", "", -1), " ")
-	for _, cp := range cps {
-		exec.Command("xdotool", "key", cp).Run()
-	}
+func dmenuChoose(options []string) string {
+	dmenuList := strings.Join(options, "\n")
+	cmd := exec.Command("dmenu", "-i")
+	dmenuStdin, _ := cmd.StdinPipe()
+	io.WriteString(dmenuStdin, dmenuList)
+	dmenuStdin.Close()
+	choiceRaw, _ := cmd.Output()
+	choice := strings.TrimSuffix(string(choiceRaw), "\n")
+	return choice
+}
+
+func typeCodepoints(codepoints []string) {
+	exec.Command("xdotool", append([]string{"key"}, codepoints...)...).Run()
 }
 
 func main() {
 	// choose an emoji using dmenu
-	var shortnames []string
-	for k := range emojiToCodepoints {
-		shortnames = append(shortnames, k)
-	}
-	shortname := chooseShortname(shortnames)
+	shortnames := getShortnames()
+	shortname := dmenuChoose(shortnames)
 
 	// get codepoints for chosen emoji
 	codepoints := emojiToCodepoints[shortname]
