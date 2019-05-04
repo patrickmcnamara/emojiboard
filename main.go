@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"io"
 	"os"
 	"os/exec"
@@ -31,10 +30,6 @@ func typeCodepoints(codepoints string) {
 }
 
 func main() {
-	// get emoji shortnames and their respective codepoints
-	var emojiToCodepoints map[string]string
-	json.Unmarshal([]byte(emoji), &emojiToCodepoints)
-
 	// choose an emoji using dmenu
 	var shortnames []string
 	for k := range emojiToCodepoints {
