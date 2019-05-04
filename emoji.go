@@ -1,7 +1,7 @@
 package main
 
 var emojiToCodepoints = map[string]string{
-	// SMILEYS & EMOTICON
+	// SMILEYS & EMOTION
 	// face-smiling
 	"Grinning Face":                   "U+1F600",
 	"Grinning Face With Big Eyes":     "U+1F603",
