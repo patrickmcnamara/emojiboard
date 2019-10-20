@@ -1,11 +1,11 @@
 # Emojiboard
 
-Emojiboard is an emoji keyboard for GNU/Linux machines running X11. 🖥
-
 ![latest version](https://img.shields.io/github/v/tag/patrickmcnamara/emojiboard?label=latest%20version)
 ![last commit](https://img.shields.io/github/last-commit/patrickmcnamara/emojiboard)
 ![top language](https://img.shields.io/github/languages/top/patrickmcnamara/emojiboard)
 ![licence](https://img.shields.io/github/license/patrickmcnamara/emojiboard?label=licence)
+
+Emojiboard is an emoji keyboard for GNU/Linux machines running X11. 🖥
 
 ## Dependencies
 
